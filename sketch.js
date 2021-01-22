@@ -19,12 +19,12 @@ function setup() {
 	world = engine.world;
 
 	//Create the Bodies Here.
-  //paperObject = new Paper(200,350,20);
+  paperObject = new Paper(200,500,50);
   //paperObject.addImage(paperImage);
-	groundObject = new Ground(width/2,height,width,20);
-  wall1Object = new Bin(570,505,20,130);
-  wall2Object = new Bin(710,505,20,130);
-  wall3Object = new BinBottom(640,580,140,20);
+	groundObject = new Ground(width/2,height-10,width,20);
+  wall1Object = new Bin(570,505,20,100);
+  //wall2Object = new Bin(710,505,20,130);
+ // wall3Object = new BinBottom(640,580,140,20);
 
 	Engine.run(engine);
   
@@ -34,17 +34,17 @@ function draw() {
   rectMode(CENTER);
   background("blue");
   Engine.update(engine);
-  //paperObject.display();
+  paperObject.display();
   groundObject.display();
   wall1Object.display();
-  wall2Object.display();
-  wall3Object.display();
+  //wall2Object.display();
+ // wall3Object.display();
   drawSprites();
 }
 
 function keyPressed(){
   if(keyCode === UP_ARROW)
   {
-	  Matter.Body.applyForce(paperObject.body,paperObject.body.position,{x:+6,y:+-50});
+	  Matter.Body.applyForce(paperObject.body,paperObject.body.position,{x:+70,y:-75});
   }
 }
